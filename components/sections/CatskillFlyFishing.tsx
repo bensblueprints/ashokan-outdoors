@@ -86,6 +86,7 @@ export default function CatskillFlyFishing() {
     <section
       id="catskill"
       ref={sectionRef}
+      aria-label="Catskill Fly Fishing Heritage and Waters"
       className="relative py-24 sm:py-32 bg-forest-950 overflow-hidden"
     >
       {/* Background accents */}

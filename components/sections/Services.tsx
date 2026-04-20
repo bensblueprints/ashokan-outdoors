@@ -57,6 +57,7 @@ export default function Services() {
   return (
     <section
       id="services"
+      aria-label="Our Guiding Services"
       className="relative py-28 md:py-36 overflow-hidden bg-forest-950"
     >
       {/* Ambient glow */}

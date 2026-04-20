@@ -62,6 +62,7 @@ export default function Hero() {
     <section
       id="hero"
       ref={sectionRef}
+      aria-label="Hero - Guided Fly Fishing and Hiking in the Catskills"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
       {/* Background: Video on desktop, static image on mobile */}

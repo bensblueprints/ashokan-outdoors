@@ -54,6 +54,7 @@ export default function About() {
   return (
     <section
       id="about"
+      aria-label="About Ashokan Outdoors"
       className="relative py-28 md:py-36 overflow-hidden bg-forest-950"
     >
       {/* Subtle top border glow */}
@@ -97,7 +98,7 @@ export default function About() {
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 40vw"
-                priority
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-forest-950/30" />
             </div>
