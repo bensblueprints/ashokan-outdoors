@@ -27,7 +27,7 @@ const services = [
   {
     icon: Mountain,
     title: 'Guided Catskill Hikes',
-    image: '/images/catskill-stream.jpg',
+    image: '/images/fall-fishing.jpg',
     alt: 'Guided hiking through Catskill mountain trails',
     href: '/guided-catskill-hikes',
     description:

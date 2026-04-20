@@ -146,19 +146,29 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* Map placeholder */}
-            <div className="glass rounded-2xl overflow-hidden aspect-[4/3]">
-              <div className="w-full h-full bg-forest-900/50 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-10 h-10 text-forest-500/40 mx-auto mb-3" />
-                  <p className="font-body text-stone-500 text-sm">
-                    West Shokan, NY
-                  </p>
-                  <p className="font-body text-stone-600 text-xs mt-1">
-                    Catskill Mountains
-                  </p>
-                </div>
+            {/* Google Maps Embed */}
+            <div className="glass rounded-2xl overflow-hidden">
+              <div className="aspect-[4/3]">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2966.5!2d-74.2847!3d41.9714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89dd0a1c5e2b9c4f%3A0x0!2s187+Watson+Hollow+Rd%2C+West+Shokan%2C+NY+12494!5e0!3m2!1sen!2sus!4v1"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(0.95) contrast(0.9)' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Ashokan Outdoors Location"
+                />
               </div>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=187+Watson+Hollow+Road+West+Shokan+NY+12494"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 px-4 py-3 bg-forest-500/20 hover:bg-forest-500/30 transition-colors"
+              >
+                <MapPin className="w-4 h-4 text-forest-400" />
+                <span className="font-body text-forest-300 font-semibold text-sm">Get Directions</span>
+              </a>
             </div>
           </motion.div>
 

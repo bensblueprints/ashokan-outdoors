@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 import { ArrowRight } from 'lucide-react'
 
 const images = [
-  { src: '/images/fall-fishing.jpg', alt: 'Fall fly fishing in the Catskills' },
+  { src: '/images/double-rainbow.webp', alt: 'Double rainbow over a Catskill river with an angler fishing' },
   { src: '/images/trout-net.jpg', alt: 'Trout caught in a net' },
   { src: '/images/fly-fishing-creek.jpg', alt: 'Fly fishing on a Catskill creek' },
 ]

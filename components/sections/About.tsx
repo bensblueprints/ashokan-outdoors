@@ -72,12 +72,71 @@ export default function About() {
           className="text-center mb-16 md:mb-20"
         >
           <span className="inline-block text-creek-400 font-body text-sm uppercase tracking-[0.25em] mb-4">
-            Our Story
+            Meet Your Guide
           </span>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-stone-100 mb-4">
             About Ashokan Outdoors
           </h2>
           <div className="w-24 h-0.5 bg-gradient-to-r from-forest-500 to-creek-400 mx-auto" />
+        </motion.div>
+
+        {/* Featured Guide Card */}
+        <motion.div
+          initial={{ opacity: 0.85, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-80px' }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="relative glass rounded-3xl overflow-hidden mb-16 md:mb-20"
+        >
+          <div className="grid md:grid-cols-5 gap-0">
+            {/* Guide Photo */}
+            <div className="md:col-span-2 relative h-80 md:h-auto min-h-[400px]">
+              <Image
+                src="/images/john-yanzek.webp"
+                alt="John Yanzek - Owner and Head Guide of Ashokan Outdoors"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 768px) 100vw, 40vw"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest-950/80 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-forest-950/30" />
+            </div>
+
+            {/* Guide Info */}
+            <div className="md:col-span-3 p-8 md:p-12 flex flex-col justify-center">
+              <span className="inline-block text-amber-500 font-body text-xs uppercase tracking-[0.3em] mb-3">
+                Owner & Head Guide
+              </span>
+              <h3 className="font-display text-5xl md:text-6xl lg:text-7xl text-white mb-4 leading-[1.05]">
+                John <span className="gradient-text-gold">Yanzek</span>
+              </h3>
+              <div className="w-16 h-1 bg-gradient-to-r from-amber-500 to-creek-400 rounded-full mb-6" />
+              <p className="font-body text-stone-300 text-lg leading-relaxed mb-4">
+                Over three decades of experience guiding anglers and hikers through the Catskill Mountains. John&apos;s deep knowledge of these waters and trails ensures every trip is safe, productive, and unforgettable.
+              </p>
+              <p className="font-body text-stone-400 text-base leading-relaxed mb-6">
+                A dedicated conservationist, proud leader of the Ashokan-Pepacton Chapter of Trout Unlimited, and passionate about connecting people to the great Catskill outdoors.
+              </p>
+
+              {/* Credential badges inline */}
+              <div className="flex flex-wrap gap-3">
+                {credentials.map((cred) => (
+                  <div
+                    key={cred.title}
+                    className={cn(
+                      'inline-flex items-center gap-2 px-4 py-2 rounded-full',
+                      'bg-white/[0.06] border border-white/[0.08]',
+                      'hover:bg-white/[0.10] hover:border-forest-500/20',
+                      'transition-all duration-300'
+                    )}
+                  >
+                    <cred.icon className="w-4 h-4 text-amber-500/80" />
+                    <span className="font-body text-xs text-stone-300 font-medium">{cred.title}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -137,17 +196,9 @@ export default function About() {
             <motion.p variants={itemVariants} className="font-body text-amber-500/90 text-xl font-medium italic leading-relaxed">
               At Ashokan Outdoors we love to connect people to nature, and we do it in a friendly and responsible way.
             </motion.p>
-
-            {/* Signature */}
-            <motion.div variants={itemVariants} className="pt-6 border-t border-forest-800/50">
-              <p className="font-display text-xl text-stone-100">John Yanzek</p>
-              <p className="font-body text-sm text-creek-400 tracking-wide uppercase">
-                Owner and Head Guide
-              </p>
-            </motion.div>
           </motion.div>
 
-          {/* Right: Staggered image grid + credential badges */}
+          {/* Right: Staggered image grid */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -202,34 +253,6 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-forest-950/50 via-transparent to-transparent" />
               </motion.div>
             </div>
-
-            {/* Credential badges */}
-            <motion.div
-              variants={containerVariants}
-              className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4"
-            >
-              {credentials.map((cred) => (
-                <motion.div
-                  key={cred.title}
-                  variants={itemVariants}
-                  className={cn(
-                    'group relative rounded-xl p-4 text-center',
-                    'bg-white/[0.04] backdrop-blur-sm',
-                    'border border-white/[0.06]',
-                    'hover:bg-white/[0.07] hover:border-forest-500/20',
-                    'transition-all duration-500'
-                  )}
-                >
-                  <cred.icon className="w-6 h-6 text-amber-500/80 mx-auto mb-2 transition-colors group-hover:text-amber-400" />
-                  <p className="font-display text-sm text-stone-100 mb-1">
-                    {cred.title}
-                  </p>
-                  <p className="font-body text-xs text-stone-400 leading-snug">
-                    {cred.description}
-                  </p>
-                </motion.div>
-              ))}
-            </motion.div>
           </motion.div>
         </div>
       </div>

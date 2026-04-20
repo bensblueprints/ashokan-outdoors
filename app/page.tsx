@@ -8,6 +8,7 @@ import BeforeYouFish from '@/components/sections/BeforeYouFish'
 import FAQ from '@/components/sections/FAQ'
 import Contact from '@/components/sections/Contact'
 import Footer from '@/components/layout/Footer'
+import FloatingCallButton from '@/components/layout/FloatingCallButton'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <FAQ />
       <Contact />
       <Footer />
+      <FloatingCallButton />
     </main>
   )
 }

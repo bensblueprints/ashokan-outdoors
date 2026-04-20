@@ -1,7 +1,6 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
-import Image from 'next/image'
 import {
   motion,
   useScroll,
@@ -56,7 +55,6 @@ export default function Hero() {
     offset: ['start start', 'end start'],
   })
 
-  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '25%'])
   const overlayOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.6])
 
   return (
@@ -65,18 +63,19 @@ export default function Hero() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Parallax Background Image */}
-      <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
-        <Image
-          src="/images/hero-main.jpg"
-          alt="Catskill Mountains fly fishing"
-          fill
-          className="object-cover"
-          priority
-          quality={90}
-          sizes="100vw"
-        />
-      </motion.div>
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          poster="/images/hero-main.jpg"
+        >
+          <source src="/images/hero-video.mp4" type="video/mp4" />
+        </video>
+      </div>
 
       {/* Gradient Overlay */}
       <motion.div
