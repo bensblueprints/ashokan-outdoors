@@ -33,7 +33,7 @@ const containerVariants = {
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0.85, y: 12 },
   visible: {
     opacity: 1,
     y: 0,
@@ -42,7 +42,7 @@ const itemVariants = {
 }
 
 const imageVariants = {
-  hidden: { opacity: 0, scale: 0.92 },
+  hidden: { opacity: 0.85, scale: 0.97 },
   visible: {
     opacity: 1,
     scale: 1,
@@ -65,7 +65,7 @@ export default function About() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}

@@ -68,7 +68,7 @@ export default function Hero() {
       {/* Parallax Background Image */}
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         <Image
-          src="/images/hero-bg.jpg"
+          src="/images/hero-main.jpg"
           alt="Catskill Mountains fly fishing"
           fill
           className="object-cover"
@@ -80,7 +80,7 @@ export default function Hero() {
 
       {/* Gradient Overlay */}
       <motion.div
-        className="absolute inset-0 z-[1] bg-gradient-to-b from-forest-950/80 via-forest-950/40 to-forest-950/90"
+        className="absolute inset-0 z-[1] bg-gradient-to-b from-forest-950/60 via-forest-950/30 to-forest-950/70"
         style={{ opacity: overlayOpacity }}
       />
 

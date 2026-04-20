@@ -27,7 +27,7 @@ function scrollToTop() {
 export default function Footer() {
   return (
     <motion.footer
-      initial={{ opacity: 0 }}
+      initial={{ opacity: 1 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.8 }}

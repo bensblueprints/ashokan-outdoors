@@ -85,7 +85,7 @@ function PriceRow({
 }
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 60, scale: 0.95 },
+  hidden: { opacity: 0.85, y: 12, scale: 0.98 },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
@@ -115,7 +115,7 @@ export default function Rates() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 8 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-16 sm:mb-20"
@@ -356,7 +356,7 @@ export default function Rates() {
 
         {/* Important Notes */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 8 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="mt-12 sm:mt-16 max-w-3xl mx-auto"

@@ -9,8 +9,9 @@ const services = [
   {
     icon: Fish,
     title: 'Fly Fishing Instruction',
-    image: '/images/casting-lesson.jpg',
-    alt: 'Fly fishing casting instruction in the Catskills',
+    image: '/images/hiking.jpg',
+    alt: 'Fly fishing instruction in the Catskill Mountains',
+    href: '/fly-fishing-instruction',
     description:
       'Whether you are looking to refine your fly fishing skills or if you are just starting out - our knowledgeable fly fishing instructors will help you enhance your proficiency. When you are ready - we can take your new skills to the Catskill waters. We promise an unforgettable experience. Join us and confidently embark on your next fly fishing journey.',
   },
@@ -19,14 +20,16 @@ const services = [
     title: 'Fly Fishing Guiding',
     image: '/images/fly-fishing-guide.jpg',
     alt: 'Expert fly fishing guide on Catskill rivers',
+    href: '/fly-fishing-guiding',
     description:
       'Experience the thrill of fly fishing on the legendary rivers and streams of the Catskills. Our expert guides will help you navigate these pristine waters, ensuring you safely make the most of your fishing adventure. We also provide all rods, reels, and flies you will need to catch a trout on a fly. Join us for an unforgettable day on the water, surrounded by breathtaking scenery.',
   },
   {
     icon: Mountain,
     title: 'Guided Catskill Hikes',
-    image: '/images/hiking.jpg',
+    image: '/images/catskill-stream.jpg',
     alt: 'Guided hiking through Catskill mountain trails',
+    href: '/guided-catskill-hikes',
     description:
       'Discover the breathtaking beauty of the Catskill High Peaks, or opt for a more manageable hiking experience tailored to your preferences. Our trained and certified hiking guides prioritize your safety and preparation to ensure a worry-free adventure. Join us for an unforgettable journey where you can immerse yourself into the great Catskill outdoors.',
   },
@@ -42,7 +45,7 @@ const containerVariants = {
 }
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0.85, y: 12 },
   visible: {
     opacity: 1,
     y: 0,
@@ -65,7 +68,7 @@ export default function Services() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 1, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
@@ -137,7 +140,7 @@ export default function Services() {
 
                 {/* Learn More link */}
                 <a
-                  href="#rates"
+                  href={service.href}
                   className={cn(
                     'inline-flex items-center gap-2 font-body text-sm font-semibold uppercase tracking-wider',
                     'text-creek-400 hover:text-creek-300',

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CheckCircle, Fish, ShieldCheck, Backpack, Info } from 'lucide-react'
+import { CheckCircle, Fish, ShieldCheck, Backpack, Info, ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const weProvide = [
@@ -16,11 +16,15 @@ const licenses = [
     name: 'New York State Fishing License',
     detail:
       'This is mandatory for anglers age 16 and over. There are single and multi-day license options for NY resident or non-resident.',
+    url: 'https://www.dec.ny.gov/permits/6091.html',
+    linkText: 'Get your license online',
   },
   {
     name: 'NYC DEP Watershed Recreation Permit',
     detail:
       'Ashokan Outdoors is licensed (by NYC DEP) to guide clients on NYC watershed properties but permits are required to enter these lands. Luckily the NYC Watershed Permit is free.',
+    url: 'https://a826-web01.nyc.gov/recpermitapp/',
+    linkText: 'Get your free permit',
   },
 ]
 
@@ -55,7 +59,7 @@ const containerVariants = {
 }
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0.85, y: 12 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
 }
 
@@ -68,7 +72,7 @@ export default function BeforeYouFish() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7 }}
@@ -121,7 +125,10 @@ export default function BeforeYouFish() {
                 {licenses.map((lic, i) => (
                   <div key={i} className="border-l-2 border-amber-500/40 pl-4">
                     <h4 className="font-body font-semibold text-amber-300 mb-1">{lic.name}</h4>
-                    <p className="font-body text-stone-400 text-sm leading-relaxed">{lic.detail}</p>
+                    <p className="font-body text-stone-400 text-sm leading-relaxed mb-2">{lic.detail}</p>
+                    <a href={lic.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-creek-400 hover:text-creek-300 text-sm font-medium transition-colors">
+                      {lic.linkText} <ArrowRight className="w-3 h-3" />
+                    </a>
                   </div>
                 ))}
               </div>
@@ -173,7 +180,7 @@ export default function BeforeYouFish() {
 
         {/* Bottom: Misc Advice */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 1, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6, delay: 0.2 }}
