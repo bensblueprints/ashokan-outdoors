@@ -18,7 +18,7 @@ const services = [
   {
     icon: Compass,
     title: 'Fly Fishing Guiding',
-    image: '/images/fly-fishing-guide.jpg',
+    image: '/images/fall-fishing.jpg',
     alt: 'Expert fly fishing guide on Catskill rivers',
     href: '/fly-fishing-guiding',
     description:
@@ -27,7 +27,7 @@ const services = [
   {
     icon: Mountain,
     title: 'Guided Catskill Hikes',
-    image: '/images/fall-fishing.jpg',
+    image: '/images/fly-fishing-guide.jpg',
     alt: 'Guided hiking through Catskill mountain trails',
     href: '/guided-catskill-hikes',
     description:

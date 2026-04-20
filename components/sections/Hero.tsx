@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
+import Image from 'next/image'
 import {
   motion,
   useScroll,
@@ -63,14 +64,28 @@ export default function Hero() {
       ref={sectionRef}
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Video Background */}
+      {/* Background: Video on desktop, static image on mobile */}
       <div className="absolute inset-0 z-0">
+        {/* Static image for mobile (always present, hidden on lg+) */}
+        <div className="block lg:hidden absolute inset-0">
+          <Image
+            src="/images/hero-main.jpg"
+            alt="Catskill Mountains fly fishing"
+            fill
+            className="object-cover"
+            priority
+            quality={90}
+            sizes="100vw"
+          />
+        </div>
+        {/* Video for desktop (hidden on mobile to save bandwidth) */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          preload="auto"
+          className="hidden lg:block absolute inset-0 w-full h-full object-cover"
           poster="/images/hero-main.jpg"
         >
           <source src="/images/hero-video.mp4" type="video/mp4" />

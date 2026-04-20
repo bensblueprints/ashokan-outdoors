@@ -54,11 +54,15 @@ export default function Navbar() {
   }, [isOpen])
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault()
     setIsOpen(false)
     const target = document.querySelector(href)
     if (target) {
+      e.preventDefault()
       target.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      // On a subpage — navigate to homepage with hash
+      e.preventDefault()
+      window.location.href = '/' + href
     }
   }
 
